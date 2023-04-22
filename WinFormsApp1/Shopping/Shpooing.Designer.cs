@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            tbPhoneNumber = new TextBox();
+            tbName = new TextBox();
             label2 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
@@ -45,15 +45,15 @@
             cbselect = new ComboBox();
             label3 = new Label();
             groupBox3 = new GroupBox();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
+            rbAlipay = new RadioButton();
+            rbWechat = new RadioButton();
             groupBox4 = new GroupBox();
-            checkBox3 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
-            button1 = new Button();
-            button2 = new Button();
-            textBox3 = new TextBox();
+            cbEmail = new CheckBox();
+            cbLine = new CheckBox();
+            cbPhone = new CheckBox();
+            btConfirm = new Button();
+            btExit = new Button();
+            tbInformation = new TextBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox6.SuspendLayout();
@@ -64,8 +64,8 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(tbPhoneNumber);
+            groupBox1.Controls.Add(tbName);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(21, 22);
@@ -75,19 +75,19 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "顾客信息";
             // 
-            // textBox2
+            // tbPhoneNumber
             // 
-            textBox2.Location = new Point(287, 30);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(147, 23);
-            textBox2.TabIndex = 1;
+            tbPhoneNumber.Location = new Point(287, 30);
+            tbPhoneNumber.Name = "tbPhoneNumber";
+            tbPhoneNumber.Size = new Size(147, 23);
+            tbPhoneNumber.TabIndex = 1;
             // 
-            // textBox1
+            // tbName
             // 
-            textBox1.Location = new Point(73, 27);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(147, 23);
-            textBox1.TabIndex = 1;
+            tbName.Location = new Point(73, 27);
+            tbName.Name = "tbName";
+            tbName.Size = new Size(147, 23);
+            tbName.TabIndex = 1;
             // 
             // label2
             // 
@@ -117,7 +117,7 @@
             groupBox2.Controls.Add(groupBox5);
             groupBox2.Controls.Add(cbselect);
             groupBox2.Controls.Add(label3);
-            groupBox2.Location = new Point(21, 127);
+            groupBox2.Location = new Point(22, 110);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(466, 308);
             groupBox2.TabIndex = 1;
@@ -144,6 +144,7 @@
             button5.TabIndex = 3;
             button5.Text = ">>";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click_1;
             // 
             // button4
             // 
@@ -154,6 +155,7 @@
             button4.TabIndex = 3;
             button4.Text = "<";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -164,6 +166,7 @@
             button3.TabIndex = 3;
             button3.Text = ">";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // groupBox6
             // 
@@ -224,115 +227,118 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(radioButton2);
-            groupBox3.Controls.Add(radioButton1);
-            groupBox3.Location = new Point(29, 462);
+            groupBox3.Controls.Add(rbAlipay);
+            groupBox3.Controls.Add(rbWechat);
+            groupBox3.Location = new Point(31, 437);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(149, 120);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "付款方式";
             // 
-            // radioButton2
+            // rbAlipay
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(23, 75);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(62, 21);
-            radioButton2.TabIndex = 0;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "支付宝";
-            radioButton2.UseVisualStyleBackColor = true;
+            rbAlipay.AutoSize = true;
+            rbAlipay.Location = new Point(23, 75);
+            rbAlipay.Name = "rbAlipay";
+            rbAlipay.Size = new Size(62, 21);
+            rbAlipay.TabIndex = 0;
+            rbAlipay.TabStop = true;
+            rbAlipay.Text = "支付宝";
+            rbAlipay.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbWechat
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(23, 35);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(50, 21);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "微信";
-            radioButton1.UseVisualStyleBackColor = true;
+            rbWechat.AutoSize = true;
+            rbWechat.Location = new Point(23, 35);
+            rbWechat.Name = "rbWechat";
+            rbWechat.Size = new Size(50, 21);
+            rbWechat.TabIndex = 0;
+            rbWechat.TabStop = true;
+            rbWechat.Text = "微信";
+            rbWechat.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(checkBox3);
-            groupBox4.Controls.Add(checkBox2);
-            groupBox4.Controls.Add(checkBox1);
-            groupBox4.Location = new Point(214, 462);
+            groupBox4.Controls.Add(cbEmail);
+            groupBox4.Controls.Add(cbLine);
+            groupBox4.Controls.Add(cbPhone);
+            groupBox4.Location = new Point(216, 437);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(137, 120);
             groupBox4.TabIndex = 3;
             groupBox4.TabStop = false;
             groupBox4.Text = "确认方式";
             // 
-            // checkBox3
+            // cbEmail
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(25, 83);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(58, 21);
-            checkBox3.TabIndex = 1;
-            checkBox3.Text = "Email";
-            checkBox3.UseVisualStyleBackColor = true;
+            cbEmail.AutoSize = true;
+            cbEmail.Location = new Point(25, 83);
+            cbEmail.Name = "cbEmail";
+            cbEmail.Size = new Size(58, 21);
+            cbEmail.TabIndex = 1;
+            cbEmail.Text = "Email";
+            cbEmail.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // cbLine
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(25, 52);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(51, 21);
-            checkBox2.TabIndex = 1;
-            checkBox2.Text = "传真";
-            checkBox2.UseVisualStyleBackColor = true;
+            cbLine.AutoSize = true;
+            cbLine.Location = new Point(25, 52);
+            cbLine.Name = "cbLine";
+            cbLine.Size = new Size(51, 21);
+            cbLine.TabIndex = 1;
+            cbLine.Text = "传真";
+            cbLine.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cbPhone
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(25, 25);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(51, 21);
-            checkBox1.TabIndex = 0;
-            checkBox1.Text = "电话";
-            checkBox1.UseVisualStyleBackColor = true;
+            cbPhone.AutoSize = true;
+            cbPhone.Location = new Point(25, 25);
+            cbPhone.Name = "cbPhone";
+            cbPhone.Size = new Size(51, 21);
+            cbPhone.TabIndex = 0;
+            cbPhone.Text = "电话";
+            cbPhone.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btConfirm
             // 
-            button1.Location = new Point(380, 480);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 42);
-            button1.TabIndex = 4;
-            button1.Text = "确定";
-            button1.UseVisualStyleBackColor = true;
+            btConfirm.Location = new Point(382, 455);
+            btConfirm.Name = "btConfirm";
+            btConfirm.Size = new Size(100, 42);
+            btConfirm.TabIndex = 4;
+            btConfirm.Text = "确定";
+            btConfirm.UseVisualStyleBackColor = true;
+            btConfirm.Click += btConfirm_Click;
             // 
-            // button2
+            // btExit
             // 
-            button2.Location = new Point(381, 530);
-            button2.Name = "button2";
-            button2.Size = new Size(100, 42);
-            button2.TabIndex = 4;
-            button2.Text = "退出";
-            button2.UseVisualStyleBackColor = true;
+            btExit.Location = new Point(383, 505);
+            btExit.Name = "btExit";
+            btExit.Size = new Size(100, 42);
+            btExit.TabIndex = 4;
+            btExit.Text = "退出";
+            btExit.UseVisualStyleBackColor = true;
+            btExit.Click += btExit_Click;
             // 
-            // textBox3
+            // tbInformation
             // 
-            textBox3.Location = new Point(28, 615);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(452, 126);
-            textBox3.TabIndex = 5;
-            textBox3.Visible = false;
-            textBox3.TextChanged += textBox3_TextChanged;
+            tbInformation.Location = new Point(30, 590);
+            tbInformation.Multiline = true;
+            tbInformation.Name = "tbInformation";
+            tbInformation.ScrollBars = ScrollBars.Vertical;
+            tbInformation.Size = new Size(452, 126);
+            tbInformation.TabIndex = 5;
+            tbInformation.Visible = false;
+            tbInformation.TextChanged += textBox3_TextChanged;
             // 
             // Shpooing
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(510, 778);
-            Controls.Add(textBox3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            ClientSize = new Size(510, 732);
+            Controls.Add(tbInformation);
+            Controls.Add(btExit);
+            Controls.Add(btConfirm);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
@@ -359,10 +365,10 @@
         private GroupBox groupBox2;
         private GroupBox groupBox3;
         private GroupBox groupBox4;
-        private Button button1;
-        private Button button2;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private Button btConfirm;
+        private Button btExit;
+        private TextBox tbPhoneNumber;
+        private TextBox tbName;
         private Label label2;
         private Label label1;
         private Button button6;
@@ -375,11 +381,11 @@
         private Label label3;
         private ListBox lbgoods;
         private ListBox lbselect;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
-        private TextBox textBox3;
+        private RadioButton rbAlipay;
+        private RadioButton rbWechat;
+        private CheckBox cbEmail;
+        private CheckBox cbLine;
+        private CheckBox cbPhone;
+        private TextBox tbInformation;
     }
 }

@@ -15,7 +15,7 @@ namespace WinFormsApp1
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            switch ( 3 )
+            switch ( 2 )
             {
                 case 0 : Application.Run(new SimpleSelect());
                     break;
