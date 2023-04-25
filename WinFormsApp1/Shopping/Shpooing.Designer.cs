@@ -74,6 +74,7 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "顾客信息";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // tbPhoneNumber
             // 

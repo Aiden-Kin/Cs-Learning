@@ -1,6 +1,7 @@
 using mini选课习题;
 using mini选课习题.Calculater;
 using mini选课习题.Shopping;
+using mini选课习题.SqlServer;
 
 namespace WinFormsApp1
 {
@@ -15,7 +16,7 @@ namespace WinFormsApp1
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            switch ( 2 )
+            switch ( 4 )
             {
                 case 0 : Application.Run(new SimpleSelect());
                     break;
@@ -24,6 +25,8 @@ namespace WinFormsApp1
                 case 2: Application.Run(new Calculate());
                     break;
                 case 3:Application.Run(new Shpooing());
+                    break;
+                case 4: Application.Run(new StudentManager());
                     break;
         }
 

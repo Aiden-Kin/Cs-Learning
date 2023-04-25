@@ -77,7 +77,7 @@ namespace mini选课习题.Shopping
         private void btConfirm_Click(object sender, EventArgs e)
         {
 
-            string selectGoods = "", payWay="", confirmWay = "";
+            string selectGoods = "", payWay = "", confirmWay = "";
 
             for (int i = lbselect.Items.Count - 1; i >= 0; i--)//添加已选商品到选择字符串
             {
@@ -135,6 +135,10 @@ namespace mini选课习题.Shopping
                     lbselect.Items.Add(lbgoods.Items[i]);
                 }
             }
+
+        }
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
     }
